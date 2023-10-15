@@ -91,7 +91,7 @@ jobs:
           region: ${{ env.REGION }}
           # NOTE: If using a pre-built image, update the image name here
           image: ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.CANDIDATES_SERVICE }}:latest
-          flags: '--allow-unauthenticated --max-instances=1 --port=8080'
+          flags: '--allow-unauthenticated --max-instances=1 --port=5000 --add-cloudsql-instances=[proyecto-final-01-399101:us-central1:abcjobs]'
           # NOTE: You can also set env variables here:
           env_vars: |
             SQL_PASSWORD=${{secrets.SQL_PASS}}
